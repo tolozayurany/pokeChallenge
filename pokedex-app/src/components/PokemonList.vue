@@ -1,24 +1,26 @@
 <template>
   <div class="pokemon-section">
-    <h3>pokemones</h3>
     <h3>{{ pokemonInfo }}</h3>
     <div v-if="!pokemonsList">Loading Please wait...</div>
     <div v-else>
-      <ul>
-        <li
-          v-for="pokemon in pokemonsList"
-          v-bind:key="pokemon.name"
-        >{{ pokemon.name }}
-        {{pokemon.base_experience}}</li>
+      <ul v-for="pokemon in pokemonsList" :key="pokemon.name">
+        <img
+          :src="pokemon.sprites.other['official-artwork'].front_default"
+          :alt="pokemon.name"
+        />
+        <li>{{ pokemon.name }}</li>
+        <li>{{ pokemon.id }}</li>
+        <li v-for="type in pokemon.types" :key="type.slot">
+          {{ type.type.name }}
+        </li>
       </ul>
     </div>
   </div>
 </template>
 
 <script>
-import api from '../api';
 
-/* const axios = require('axios'); */
+import api from '../api';
 
 export default {
   name: 'PokemonList',
@@ -32,11 +34,14 @@ export default {
     };
   },
   created() {
-    api.getDataPokemons().then((pokemons) => { this.pokemonsList = pokemons; });
+    api.getDataPokemons().then((pokemons) => {
+      this.pokemonsList = pokemons;
+    });
   },
 };
 </script>
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
+<!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped>
 header {
   display: flex;

@@ -7,7 +7,6 @@
 </template>
 
 <script>
-/* IMAGEN POKEMON:  sprites.other.official-artwork.front_default */
 import Header from './Header.vue';
 import PokemonList from './PokemonList.vue';
 
@@ -21,7 +20,6 @@ export default {
     PokemonList,
   },
 };
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

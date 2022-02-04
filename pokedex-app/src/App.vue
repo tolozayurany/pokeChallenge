@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
 import Pokedex from './components/Pokedex.vue';
 
 export default {

@@ -11,11 +11,15 @@
 </template>
 
 <script>
+
 export default {
   name: 'Header',
   props: {
     mss: String,
   },
+  data: () => ({
+    active: 0,
+  }),
 };
 </script>
 
