@@ -1,13 +1,16 @@
 <template>
-  <div class="hello">
-      <Header mss="headersputs"/>
-    <h1>{{ msg }}</h1>
+  <div class="pokedex">
+    <Header />
+    <div class="text-principal">
+      <h1>{{ msg }}</h1>
+    </div>
+    <PokemonList  /> <!-- :dataPokemon='info' -->
   </div>
 </template>
 
 <script>
-
 import Header from './Header.vue';
+import PokemonList from './PokemonList.vue';
 
 export default {
   name: 'Pokedex',
@@ -16,24 +19,25 @@ export default {
   },
   components: {
     Header,
+    PokemonList,
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.text-principal {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+h1 {
+  color: #524F64;
+  font-weight: 700;
+  font-size: 3em;
+  width: 30%;
+  min-width: 300px;
+  max-width: 500px;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>
