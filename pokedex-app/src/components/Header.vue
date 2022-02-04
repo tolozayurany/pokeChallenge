@@ -1,7 +1,7 @@
 <template>
   <div class="header-section">
     <header>
-        <h3>Pokedex</h3>
+        <h3>PokéChall</h3>
         <nav>
             <li>Inicio</li>
             <li>Juegos</li>

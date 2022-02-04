@@ -1,13 +1,15 @@
 <template>
   <div class="hello">
-      <Header mss="headersputs"/>
+    <Header mss="headersputs" />
     <h1>{{ msg }}</h1>
+    <PokemonList  /> <!-- :dataPokemon='info' -->
   </div>
 </template>
 
 <script>
-
+/* IMAGEN POKEMON:  sprites.other.official-artwork.front_default */
 import Header from './Header.vue';
+import PokemonList from './PokemonList.vue';
 
 export default {
   name: 'Pokedex',
@@ -16,8 +18,10 @@ export default {
   },
   components: {
     Header,
+    PokemonList,
   },
 };
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Pokedex msg="Welcome to Your Vue.js App" />
+    <Pokedex msg="Pokédex" />
   </div>
 </template>
 
