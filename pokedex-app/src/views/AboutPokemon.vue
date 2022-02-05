@@ -1,20 +1,19 @@
 <template>
-<router-view>
   <div class="pokedex">
     <Header />
     <div class="text-principal">
       <h1>ABOUT</h1>
     </div>
   </div>
-  </router-view>
 </template>
 
 <script>
-import Header from './Header.vue';
+import Header from '../components/Header.vue';
 
 export default {
   name: 'AboutPokemon',
   props: {
+    pokemonInfo: Object,
   },
   components: {
     Header,

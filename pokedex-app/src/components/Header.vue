@@ -6,7 +6,7 @@
         <h3>POKÉDEX</h3>
       </section>
       <nav>
-        <li>Inicio</li>
+        <li><router-link to="/">Inicio</router-link></li>
         <li>Jugar</li>
       </nav>
     </header>

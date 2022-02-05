@@ -2,24 +2,18 @@
   <div class="pokedex">
     <Header />
     <div class="text-principal">
-      <h1>{{ msg }}</h1>
+      <h1> POKÉDEX </h1>
     </div>
-    <PokemonList  /> <!-- :dataPokemon='info' -->
-     <p>
-       <router-link to="/about">Go to pokemon</router-link>
-      </p>
+    <PokemonList  />
   </div>
 </template>
 
 <script>
-import Header from './Header.vue';
-import PokemonList from './PokemonList.vue';
+import Header from '../components/Header.vue';
+import PokemonList from '../components/PokemonList.vue';
 
 export default {
   name: 'Pokedex',
-  props: {
-    msg: String,
-  },
   components: {
     Header,
     PokemonList,
