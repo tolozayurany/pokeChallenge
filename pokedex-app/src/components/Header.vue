@@ -2,12 +2,22 @@
   <div class="header-section">
     <header class="header">
       <section class="logo">
-        <img src="..\assets\pokeball.png" alt="" />
+        <img
+        src="..\assets\pokeball.png"
+        class="logo__image"
+        alt="pokeball-icon" />
         <h3>POKÉDEX</h3>
       </section>
-      <nav>
-        <li><router-link to="/">Inicio</router-link></li>
-        <li>Jugar</li>
+      <nav class="header-navigation">
+        <li class="header-navigation__list">
+          <router-link class="navigation-link" to="/">
+        Inicio
+        </router-link></li>
+        <li class="header-navigation__list" >
+          <a class="navigation-link"
+             href="https://www.pokemon.com/el/app/">Jugar
+          </a>
+        </li>
       </nav>
     </header>
   </div>
@@ -20,7 +30,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .header {
   display: flex;
@@ -35,13 +44,12 @@ export default {
   color: white;
   font-size: 1.2em;
 }
-.logo img{
+.logo__image {
   width: 30px;
   height: 30px;
   margin: 15px;
 }
-
-nav {
+.header-navigation {
   display: flex;
   list-style: none;
   width: 50%;
@@ -51,9 +59,23 @@ nav {
   color: white;
   font-weight: bolder;
 }
-li {
+.header-navigation__list {
   margin-left: 10px;
   width: 20%;
 }
-
+.navigation-link {
+  text-decoration: none;
+}
+.navigation-link:hover {
+  color: orange;
+  cursor: pointer;
+}
+.navigation-link:active {
+  text-decoration: none;
+  color: white;
+}
+.navigation-link:visited {
+  text-decoration: none;
+  color: white;
+}
 </style>

@@ -1,29 +1,49 @@
 <template>
-  <div class="pokedex">
-    <div class="text-principal">
-      <h2>{{
-          `${pokemonInfoObject.name.charAt(0).toUpperCase()}${pokemonInfoObject.name.slice(1)}`
-           }}
+  <section class="pokemon-section">
+    <section class="pokemon-details">
+      <h2 class="pokemon-section__principal-text">
+        {{
+          `${pokemonInfoObject.name
+            .charAt(0)
+            .toUpperCase()}${pokemonInfoObject.name.slice(1)}`
+        }}
       </h2>
-    </div>
-        <img
-        :src="pokemonInfoObject.sprites.other['official-artwork'].front_default"
-        :alt="pokemonInfoObject.name">
-        <ul v-for="ability in pokemonInfoObject.abilities" :key="ability.name">
-            <li>{{ability.ability.name}}</li>
+      <section class="pokemon-description__text">
+        <p> Esta es la descripción de pokemon, aquí se ubica todo
+          lo que va respecto al pokemon tipo asi como loeremi aims
+        </p>
+      </section>
+      <p class="pokemon-details__title-abilities">Habilidades</p>
+      <div class="pokemon-details__abilities">
+        <ul
+          v-for="ability in pokemonInfoObject.abilities"
+          :key="ability.name"
+          class="pokemon-abilities__list"
+        >
+          <li class="abilities-pokemon__tags">
+            {{
+              `${ability.ability.name.charAt(0).toUpperCase()}${ability.ability.name.slice(1)}`
+            }}
+          </li>
         </ul>
-  </div>
+      </div>
+    </section>
+    <section class="pokemon-image">
+      <img
+        :src="pokemonInfoObject.sprites.other['official-artwork'].front_default"
+        :alt="pokemonInfoObject.name"
+      />
+    </section>
+  </section>
 </template>
 
 <script>
-
 export default {
   name: 'PokemonInformation',
   props: {
     pokemonInfo: String,
   },
-  components: {
-  },
+  components: {},
   data() {
     return {
       pokemonInfoObject: JSON.parse(this.pokemonInfo),
@@ -32,20 +52,65 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.text-principal {
+.pokemon-section {
   display: flex;
-  justify-content: flex-start;
-  width: 100%;
 }
-h2 {
-  color: #524F64;
+.pokemon-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin-left: 100px;
+}
+
+.pokemon-section__principal-text {
+  color: #524f64;
   font-weight: 700;
+  text-align: left;
   font-size: 3em;
   width: 30%;
   min-width: 300px;
   max-width: 500px;
 }
-
+.pokemon-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+  height: 80vh;
+}
+.pokemon-description__text {
+  width: 90%;
+  text-align: left;
+  color: #646161;
+}
+.pokemon-details__title-abilities {
+  font-weight: 600;
+  font-size: 1.0em;
+  color: #646161;
+  text-align: left;
+}
+.pokemon-details__abilities {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  height: 7vh;
+  width: 90%;
+}
+.pokemon-abilities__list {
+  padding: 0;
+  width: 90%;
+}
+.abilities-pokemon__tags {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 0;
+  border-radius: 7px;
+  background-color: #524f64;
+  color: #ffffff;
+  font-size: 0.9em;
+  box-shadow: 4px 4px 6px 1px rgba(0, 0, 0, 0.1);
+}
 </style>

@@ -1,15 +1,11 @@
 <template>
-  <div class="pokedex">
+  <div class="about-pokemon__section">
     <img
         src="../assets/pokeballBack.png"
         alt="pokeball gray"
         class="pokeball-image">
     <Header />
-    <div class="text-principal">
-   <!--    <h2>{{ `${pokemonInfo.name.toUpperCase()}`}}</h2> -->
-    </div>
-      <PokemonInformation
-      :pokemonInfo="pokemonInfo" />
+    <PokemonInformation :pokemonInfo="pokemonInfo" />
   </div>
 </template>
 
@@ -29,9 +25,8 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.pokedex {
+.about-pokemon__section {
   position: relative;
 }
 .pokeball-image{

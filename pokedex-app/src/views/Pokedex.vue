@@ -6,40 +6,69 @@
       class="pokeball-image"
     />
     <Header />
-    <div class="text-principal">
-      <h1>POKÉDEX</h1>
+    <div class="pokedex__text-section">
+      <h1 class="pokedex__principal-text">POKÉDEX</h1>
     </div>
-    <PokemonList />
-    <Pagination
-      v-model="page"
-      :records="500"
-      :per-page="25"
-      @paginate="myCallback"
-    />
+    <PokemonList :pokemonsList="pokemonsList" />
+    <nav class="pagination__nav" role="navigation" aria-label="pagination__nav">
+        <a class="pagination-change" v-on:click="changePage(page-1)">Atrás</a>
+        <ul class="pagination-list">
+          <li>
+            <a class="pagination-change current">{{page}}</a>
+          </li>
+        </ul>
+        <a class="pagination-change" v-on:click="changePage(page+5)">Siguiente</a>
+      </nav>
   </div>
 </template>
 
 <script>
-import Pagination from 'v-pagination-3';
 import Header from '../components/Header.vue';
 import PokemonList from '../components/PokemonList.vue';
+
+const axios = require('axios');
 
 export default {
   name: 'Pokedex',
   components: {
     Header,
     PokemonList,
-    Pagination,
   },
   data() {
     return {
-      page: 1,
+      pokemonsList: [],
+      page: 0,
+      pages: 200,
     };
+  },
+  mounted() {
+    // Invocar método al iniciar la app
+    this.fetch();
+  },
+  methods: {
+    fetch() {
+      const url = 'https://pokeapi.co/api/v2/pokemon';
+      return axios
+        .get(`${url}/?offset=${this.page}&limit=5`)
+        .then((allData) => allData.data.results)
+        .then((pokemonsList) => Promise.all(
+          pokemonsList.sort().map((pokemon) => axios
+            .get(pokemon.url).then((dataPokemon) => {
+              this.pokemonsList.push(dataPokemon.data);
+            })),
+        ));
+    },
+    changePage(page) {
+      this.page = (page <= 0 || page > this.pages) ? this.page : page;
+      this.fetch();
+    },
+    cleanDiv() {
+
+    },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .pokedex {
   position: relative;
@@ -50,17 +79,34 @@ export default {
   width: 600px;
   left: -100px;
 }
-.text-principal {
+.pokedex__text-section {
   display: flex;
   justify-content: flex-start;
   width: 100%;
 }
-h1 {
+.pokedex__principal-text {
   color: #524f64;
   font-weight: 700;
   font-size: 3em;
   width: 30%;
   min-width: 300px;
   max-width: 500px;
+}
+.pagination__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination-list {
+  list-style: none;
+  width: 100px;
+  padding: 0;
+}
+.pagination-change {
+  width: 100px;
+}
+.pagination-change:hover {
+  color: orange;
+  cursor: pointer;
 }
 </style>
