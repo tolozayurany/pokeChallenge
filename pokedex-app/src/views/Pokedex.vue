@@ -14,7 +14,7 @@
         <a class="pagination-change" v-on:click="changePage(page-1)">Atrás</a>
         <ul class="pagination-list">
           <li>
-            <a class="pagination-change current">{{page}}</a>
+            <a class="pagination-change-current">{{page}}</a>
           </li>
         </ul>
         <a class="pagination-change" v-on:click="changePage(page+5)">Siguiente</a>
@@ -72,6 +72,7 @@ export default {
 <style scoped>
 .pokedex {
   position: relative;
+  height: 90vh;
 }
 .pokeball-image {
   position: absolute;
@@ -91,8 +92,10 @@ export default {
   width: 30%;
   min-width: 300px;
   max-width: 500px;
+  margin-top: 8vh;
 }
 .pagination__nav {
+  margin-top: 5vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,7 +106,17 @@ export default {
   padding: 0;
 }
 .pagination-change {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100px;
+  height: 4vh;
+  border: 1px solid #524f64;
+  font-size: 0.8em;
+  color: #524f64;
+  border-radius: 7px;
+  box-shadow: 4px 4px 6px 1px rgb(0 0 0 / 15%);
+  font-weight: bold;
 }
 .pagination-change:hover {
   color: orange;

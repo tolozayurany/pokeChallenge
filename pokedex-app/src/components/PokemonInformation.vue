@@ -28,10 +28,11 @@
         </ul>
       </div>
     </section>
-    <section class="pokemon-image">
+    <section class="pokemon-image__section">
       <img
         :src="pokemonInfoObject.sprites.other['official-artwork'].front_default"
         :alt="pokemonInfoObject.name"
+        class="pokemon-image--width"
       />
     </section>
   </section>
@@ -55,15 +56,16 @@ export default {
 <style scoped>
 .pokemon-section {
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 .pokemon-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
-  margin-left: 100px;
+  width: 35%;
+  margin-left: 80px;
 }
-
 .pokemon-section__principal-text {
   color: #524f64;
   font-weight: 700;
@@ -73,12 +75,15 @@ export default {
   min-width: 300px;
   max-width: 500px;
 }
-.pokemon-image {
+.pokemon-image__section {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 65%;
+  width: 58%;
   height: 80vh;
+}
+.pokemon-image--width {
+  width: 58%;
 }
 .pokemon-description__text {
   width: 90%;

@@ -27,23 +27,4 @@ export default {
 .pokemon-section {
   display: flex;
 }
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.pagination-list{
-  list-style: none;
-}
-.pagination a {
-  width: 100px;
-}
-.pagination ul {
-  width: 100px;
-  padding: 0;
-}
-a:hover {
-  color: orange;
-  cursor: pointer;
-}
 </style>
