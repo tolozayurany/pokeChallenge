@@ -5,7 +5,16 @@
       :key="pokemon.name"
       class="card-pokemon"
     >
-      <router-link to="/about" tag="div" >
+      <router-link
+        :to="{
+          name: 'about',
+          params: {
+            id: pokemon.name,
+            pokemonInfo: JSON.stringify(pokemon),
+          },
+        }"
+        tag="div"
+      >
         <img
           :src="pokemon.sprites.other['official-artwork'].front_default"
           :alt="pokemon.name"
@@ -37,6 +46,20 @@ export default {
     pokemonsList: Object,
   },
 };
+/* <router-link
+        :to="{
+          name: 'about',
+          params: {
+            id: pokemon.name,
+            muneco: JSON.stringify(pokemon),
+            pokemonName: pokemon.name,
+            pokemonAbilities: JSON.stringify(pokemon.abilities),
+            pokemonImage:
+              pokemon.sprites.other['official-artwork'].front_default,
+          },
+        }"
+        tag="div">
+      > */
 </script>
 
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
@@ -60,7 +83,7 @@ export default {
   background: #ffffff;
   box-shadow: 4px 4px 6px 2px rgba(0, 0, 0, 0.15);
   border-radius: 18px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .card-pokemon:hover {
   transform: scale(1.1);

@@ -11,8 +11,16 @@ import AboutPokemon from './views/AboutPokemon.vue';
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', component: Pokedex },
-    { path: '/about', component: AboutPokemon, props: true },
+    {
+      path: '/',
+      component: Pokedex,
+    },
+    {
+      path: '/about/:id',
+      name: 'about',
+      component: AboutPokemon,
+      props: true,
+    },
   ],
 });
 

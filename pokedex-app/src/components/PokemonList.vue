@@ -14,7 +14,7 @@
 
 <script>
 import api from '../api';
-import CardPokemon from './cardPokemon.vue';
+import CardPokemon from './CardPokemon.vue';
 
 export default {
   name: 'PokemonList',
