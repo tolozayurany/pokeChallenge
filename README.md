@@ -8,13 +8,16 @@
 
 ## 1. Definición del producto
 
-En esta actividad se desarrolló un proyecto en Vue que muestra un listado de pokemones con información relevante para simular un Pokédex. Se logró desarrollar en 5 días con el framework de VUE, JavaScript y CSS. 
+En esta actividad se desarrolló un proyecto en Vue que muestra un listado de pokémons traidos de una API y se muestra información relevante para simular una Pokédex. Este proyecto se logró desarrollar en 5 días con el framework de VUE, JavaScript y CSS. 
 
 ## 2. Prototipos
 
 ### Prototipos de alta fidelidad
 
-Para asegurar una buena experiencia de usuario se realizaron prototipos de alta fidelidad de las pantallas que contiene la aplicación. Se tuvo en cuenta la accesibilidad relacionada con contraste, diseño y usabilidad. 
+Para asegurar una buena experiencia de usuario se realizaron prototipos de alta fidelidad de las pantallas que contiene la aplicación. Se tuvo en cuenta la accesibilidad relacionada con contraste, diseño y usabilidad.
+
+![Pokédex](./src/assets/pokedexMockup.png)
+![Información del Pokémon](./src/assets/aboutMockup.png)
 
 [Ver prototipos de alta fidelidad](https://www.figma.com/file/VN8aYnQ5FRI6Ivv2UOycmK/PokeChallengeMockups?node-id=0%3A1)
 
