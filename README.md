@@ -37,8 +37,8 @@ Para asegurar una buena experiencia de usuario se realizaron prototipos de alta 
 
  - [X] **3. Desarrollo:** De acuerdo a la organización se buscó lograr hacer una funcionalidad por día, pero, debido a algunas situaciones presentadas en el pretrabajo y el llamado de la data, se tuvieron que retrasar algunas tareas, por lo que el entregable final necesita algunas modificaciones relacionadas con carga de datos, paginación y funcionalidad para cambios de idioma. 
 
- - [X] **4. Recomendaciones:** Considero que el reto es muy adecuado para el tiempo en el que se plantea y a su vez es retador para quienes no tenemos tanta experiencia con el framework. Para mi ha sido un proceso de aprendizaje muy grande pues conocí la forma como se puede trabajar con Vue. Me gustaría que en retos futuros se pudiera recomendar alguna metodología o framework para realizar estilos, pues aunque busqué la forma de realizar el desarrollo con una libería, fue complejo encontrar una ideal para el desarrollo. 
- 
+ - [X] **4. Recomendaciones:** Considero que el reto es muy adecuado para el tiempo en el que se plantea y a su vez es retador para quienes no tenemos tanta experiencia con el framework. Para mi ha sido un proceso de aprendizaje muy grande pues conocí la forma como se puede trabajar con Vue. Me gustaría que en retos futuros se pudiera recomendar alguna metodología o framework para realizar estilos, pues aunque busqué la forma de realizar el desarrollo con una libería, fue complejo encontrar una ideal para crear los estilos más modificables.  
+
 ## 4. Tecnologías y metodologías usadas
 
 ### Metodologías
