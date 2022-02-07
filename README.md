@@ -16,7 +16,7 @@ En esta actividad se desarrolló un proyecto en Vue que muestra un listado de po
 
 Para asegurar una buena experiencia de usuario se realizaron prototipos de alta fidelidad de las pantallas que contiene la aplicación. Se tuvo en cuenta la accesibilidad relacionada con contraste, diseño y usabilidad.
 
-![Pokédex](./src/assets/aboutMockup.png.png)
+![Pokédex](./src/assets/aboutMockup.png)
 ![Información del Pokémon](./src/assets/aboutMockup.png)
 
 [Ver prototipos de alta fidelidad](https://www.figma.com/file/VN8aYnQ5FRI6Ivv2UOycmK/PokeChallengeMockups?node-id=0%3A1)
