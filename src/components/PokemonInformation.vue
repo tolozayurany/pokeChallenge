@@ -51,7 +51,6 @@ export default {
   props: {
     pokemonInfo: String,
   },
-  components: {},
   data() {
     return {
       pokemonInfoObject: JSON.parse(this.pokemonInfo),
@@ -63,7 +62,6 @@ export default {
       .get(`${this.pokemonInfoObject.species.url}`)
       .then((allData) => {
         this.pokemonDescription = allData.data.flavor_text_entries;
-        console.log(allData.data.flavor_text_entries);
       });
   },
 };
