@@ -8,9 +8,13 @@
             .toUpperCase()}${pokemonInfoObject.name.slice(1)}`
         }}
       </h2>
-      <section class="pokemon-description__text">
-        <p> Esta es la descripción de pokemon, aquí se ubica todo
-          lo que va respecto al pokemon tipo asi como loeremi aims
+      <section class="pokemon-description__text"
+          v-for="description in pokemonDescription"
+          :key="description.name
+          "
+       >
+        <p v-if="description.language.name=='es'">
+          {{ description.flavor_text}}
         </p>
       </section>
       <p class="pokemon-details__title-abilities">Habilidades</p>
@@ -39,6 +43,9 @@
 </template>
 
 <script>
+
+const axios = require('axios');
+
 export default {
   name: 'PokemonInformation',
   props: {
@@ -48,7 +55,16 @@ export default {
   data() {
     return {
       pokemonInfoObject: JSON.parse(this.pokemonInfo),
+      pokemonDescription: null,
     };
+  },
+  mounted() {
+    return axios
+      .get(`${this.pokemonInfoObject.species.url}`)
+      .then((allData) => {
+        this.pokemonDescription = allData.data.flavor_text_entries;
+        console.log(allData.data.flavor_text_entries);
+      });
   },
 };
 </script>

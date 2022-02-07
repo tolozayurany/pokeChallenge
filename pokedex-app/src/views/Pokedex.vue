@@ -62,9 +62,6 @@ export default {
       this.page = (page <= 0 || page > this.pages) ? this.page : page;
       this.fetch();
     },
-    cleanDiv() {
-
-    },
   },
 };
 </script>
